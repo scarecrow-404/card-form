@@ -3,7 +3,7 @@ import Form from "./Form";
 
 const Card = ({ userData }) => {
   return (
-    <section className=" relative h-[30vh] w-full bg-[url('./src/assets/bg-main-mobile.png')] lg:h-[100vh] lg:w-[33vw] lg:bg-[url('./src/assets/bg-main-desktop.png')]">
+    <section className=" relative h-[30vh] w-full bg-[url('src/assets/bg-main-mobile.png')] lg:h-[100vh] lg:w-[33vw] lg:bg-[url('src/assets/bg-main-desktop.png')]">
       <div className="card relative mx-auto h-[100vh] max-w-[400px]">
         <div className="back-card absolute inset-y-7 right-3 z-10 lg:left-[60%] lg:top-[50%] lg:w-[350px]">
           <img
