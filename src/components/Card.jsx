@@ -1,11 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import bgPic from "../assets/bg-main-mobile.png";
 import backCardPic from "../assets/bg-card-back.png";
 import frontCardPic from "../assets/bg-card-front.png";
+import cardLogo from "../assets/card-logo.png";
 const Card = ({ userData }) => {
+  const [bgUrl, setBgUrl] = useState({ bgPic });
   return (
     <section
-      className={`relative h-[30vh] w-full bg-[url('${bgPic}')] lg:h-[100vh] lg:w-[33vw] lg:bg-[url('src/assets/bg-main-desktop.png')]`}
+      className={`relative h-[30vh] w-full bg-[url('${bgUrl}')] lg:h-[100vh] lg:w-[33vw] lg:bg-[url('src/assets/bg-main-desktop.png')]`}
     >
       <div className="card relative mx-auto h-[100vh] max-w-[400px]">
         <div className="back-card absolute inset-y-7 right-3 z-10 lg:left-[60%] lg:top-[50%] lg:w-[350px]">
@@ -25,7 +27,7 @@ const Card = ({ userData }) => {
             className="w-[275px] lg:w-[350px]"
           />
           <div className="card-logo absolute left-5 top-5 z-30 w-14">
-            <img src="src/assets/card-logo.svg" alt="Card logo" />
+            <img src={cardLogo} alt="Card logo" />
           </div>
           <p className="card-number absolute left-6 top-20 text-xl text-white lg:top-28">
             {userData.cardNumber ? userData.cardNumber : "0000 0000 0000 0000"}
