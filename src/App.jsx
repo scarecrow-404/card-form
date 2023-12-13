@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Form from "./components/Form";
 import Complete from "./components/Complete";
-import Card from "./components/card";
+import Card from "./components/Card";
 
 function App() {
   const [cardNumber, setCardNumber] = useState("");

@@ -1,13 +1,16 @@
 import React, { useContext } from "react";
-import Form from "./Form";
-
+import bgPic from "../assets/bg-main-mobile.png";
+import backCardPic from "../assets/bg-card-back.png";
+import frontCardPic from "../assets/bg-card-front.png";
 const Card = ({ userData }) => {
   return (
-    <section className=" relative h-[30vh] w-full bg-[url('src/assets/bg-main-mobile.png')] lg:h-[100vh] lg:w-[33vw] lg:bg-[url('src/assets/bg-main-desktop.png')]">
+    <section
+      className={`relative h-[30vh] w-full bg-[url('${bgPic}')] lg:h-[100vh] lg:w-[33vw] lg:bg-[url('src/assets/bg-main-desktop.png')]`}
+    >
       <div className="card relative mx-auto h-[100vh] max-w-[400px]">
         <div className="back-card absolute inset-y-7 right-3 z-10 lg:left-[60%] lg:top-[50%] lg:w-[350px]">
           <img
-            src="src/assets/bg-card-back.png"
+            src={backCardPic}
             alt="Back side of card"
             className=" w-[275px] lg:w-[350px]"
           />
@@ -17,7 +20,7 @@ const Card = ({ userData }) => {
         </div>
         <div className="front-card absolute inset-y-28 left-5 z-20 lg:left-[45%] lg:top-[20%] lg:w-[350px]">
           <img
-            src="src/assets/bg-card-front.png"
+            src={frontCardPic}
             alt="Front side of card"
             className="w-[275px] lg:w-[350px]"
           />
