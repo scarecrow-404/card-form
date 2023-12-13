@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import bgPic from "../assets/bg-main-mobile.png";
 import backCardPic from "../assets/bg-card-back.png";
 import frontCardPic from "../assets/bg-card-front.png";
-import cardLogo from "../assets/card-logo.png";
+import cardLogo from "../assets/card-logo.svg";
 const Card = ({ userData }) => {
   const [bgUrl, setBgUrl] = useState({ bgPic });
   return (
