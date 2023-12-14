@@ -1,13 +1,36 @@
-import React, { useContext, useState } from "react";
-import bgPic from "../assets/bg-main-mobile.png";
+import React, { useEffect, useState } from "react";
 import backCardPic from "../assets/bg-card-back.png";
 import frontCardPic from "../assets/bg-card-front.png";
 import cardLogo from "../assets/card-logo.svg";
+import bgMobile from "../assets/bg-main-mobile.png";
+import bgDesktop from "../assets/bg-main-desktop.png";
 const Card = ({ userData }) => {
-  const [bgUrl, setBgUrl] = useState({ bgPic });
+  const [isDisplayMobile, setIsDisplayMobile] = useState(true);
+
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+    const handleMobileDisplay = () => {
+      width > 1024 ? setIsDisplayMobile(false) : setIsDisplayMobile(true);
+    };
+    window.addEventListener("resize", handleResize);
+    handleMobileDisplay();
+    return () => {
+      console.log(isDisplayMobile);
+      window.removeEventListener("resize", handleResize);
+      handleMobileDisplay();
+    };
+  }, [width]);
+
   return (
     <section
-      className={`relative h-[30vh] w-full bg-[url('${bgUrl}')] lg:h-[100vh] lg:w-[33vw] lg:bg-[url('src/assets/bg-main-desktop.png')]`}
+      className={`relative h-[30vh] w-full lg:h-[100vh] lg:w-[33vw] `}
+      style={{
+        backgroundImage: `url(${isDisplayMobile ? bgMobile : bgDesktop})`,
+      }}
     >
       <div className="card relative mx-auto h-[100vh] max-w-[400px]">
         <div className="back-card absolute inset-y-7 right-3 z-10 lg:left-[60%] lg:top-[50%] lg:w-[350px]">
