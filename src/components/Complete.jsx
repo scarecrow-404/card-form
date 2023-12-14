@@ -17,7 +17,7 @@ const Complete = ({
     setDateMM("");
     setDateYY("");
     setCompleteState(false);
-    console.log(completeState);
+    // console.log(completeState);
   }
   return (
     <div className="complete-logo m-6 mx-auto mt-24 flex max-w-[400px] flex-col items-center justify-center gap-8">

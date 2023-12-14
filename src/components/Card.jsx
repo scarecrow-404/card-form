@@ -19,7 +19,7 @@ const Card = ({ userData }) => {
     window.addEventListener("resize", handleResize);
     handleMobileDisplay();
     return () => {
-      console.log(isDisplayMobile);
+      // console.log(isDisplayMobile);
       window.removeEventListener("resize", handleResize);
       handleMobileDisplay();
     };
@@ -27,13 +27,13 @@ const Card = ({ userData }) => {
 
   return (
     <section
-      className={`relative h-[30vh] w-full lg:h-[100vh] lg:w-[33vw] `}
+      className={`relative h-[30vh] w-full bg-cover lg:h-[100vh] lg:w-[33vw]`}
       style={{
         backgroundImage: `url(${isDisplayMobile ? bgMobile : bgDesktop})`,
       }}
     >
-      <div className="card relative mx-auto h-[100vh] max-w-[400px]">
-        <div className="back-card absolute inset-y-7 right-3 z-10 lg:left-[60%] lg:top-[50%] lg:w-[350px]">
+      <div className="card relative mx-auto h-[25%] max-w-[400px] lg:h-full">
+        <div className="back-card absolute inset-y-7 right-3 z-10 h-fit lg:left-[60%] lg:top-[50%] lg:w-[350px]">
           <img
             src={backCardPic}
             alt="Back side of card"
@@ -43,7 +43,7 @@ const Card = ({ userData }) => {
             {userData.cvc ? userData.cvc : "123"}
           </div>
         </div>
-        <div className="front-card absolute inset-y-28 left-5 z-20 lg:left-[45%] lg:top-[20%] lg:w-[350px]">
+        <div className="front-card absolute inset-y-28 left-5 z-20 h-fit lg:left-[45%] lg:top-[20%] lg:w-[350px]">
           <img
             src={frontCardPic}
             alt="Front side of card"

@@ -48,7 +48,7 @@ const Form = ({
 
   return (
     <form
-      className="m-5 mx-auto mt-24 flex max-w-[400px] flex-col justify-center gap-1 text-[##21092f]"
+      className="m-10 mx-auto mt-24 flex max-w-[400px] flex-col justify-center gap-1 p-5 text-[##21092f]"
       onSubmit={onSubmit}
     >
       <label htmlFor="name">CARDHOLDER NAME</label>
