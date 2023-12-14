@@ -1,5 +1,5 @@
 import React from "react";
-
+import completeIcon from "../assets/icon-complete.svg";
 const Complete = ({
   setCardName,
   setCardNumber,
@@ -21,7 +21,7 @@ const Complete = ({
   }
   return (
     <div className="complete-logo m-6 mx-auto mt-24 flex max-w-[400px] flex-col items-center justify-center gap-8">
-      <img src="src/assets/icon-complete.svg" alt="" className=" w-24 " />
+      <img src={completeIcon} alt="" className=" w-24 " />
       <h1 className=" text-2xl">THANK YOU!</h1>
       <p className=" text-gray-400">We've added your card details</p>
       <button
